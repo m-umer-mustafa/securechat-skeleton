@@ -1,6 +1,9 @@
-# Manual evidence checklist
-- Show encrypted payloads (no plaintext)
-- BAD_CERT on invalid/self/expired cert
-- SIG_FAIL on tamper (flip bit in ct)
-- REPLAY on reused seqno
-- Transcript + signed SessionReceipt
+# Manual Testing Checklist
+
+## Security Verification Tasks
+
+- **Encryption Verification**: Confirm all payloads are encrypted (no plaintext visible)
+- **Certificate Validation**: Test BAD_CERT rejection on invalid/self-signed/expired certificates
+- **Tampering Detection**: Verify SIG_FAIL on modified ciphertext (bit flipping test)
+- **Replay Protection**: Confirm REPLAY rejection when reusing sequence numbers
+- **Non-Repudiation**: Validate transcript generation and signed SessionReceipt
